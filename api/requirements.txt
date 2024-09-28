@@ -1,3 +1,6 @@
 uvicorn
 fastapi
 nltk
+xgboost 
+numpy
+scikit-learn
