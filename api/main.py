@@ -19,6 +19,13 @@ with open('./model/mental_health_tfidf.pkl', 'rb') as f:
 
 app = FastAPI()
 
+# add cors 
+@app.middleware("http")
+async def add_cors_header(request, call_next):
+    response = await call_next(request)
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
+
 @app.post('/predict')
 def return_predictions(data: dict):
     data = data.get('data', [])
