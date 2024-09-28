@@ -8,6 +8,15 @@ nltk.download('averaged_perceptron_tagger_eng')
 nltk.download('maxent_ne_chunker')
 nltk.download('words')
 nltk.download('maxent_ne_chunker_tab')
+nltk.download('punkt_tab')
+nltk.download('stopwords_tab')
+nltk.download('wordnet_tab')
+nltk.download('words_tab')
+nltk.download('maxent_ne_chunker_en')
+nltk.download('punkt_en')
+nltk.download('stopwords_en')
+nltk.download('wordnet_en')
+nltk.download('words_en')
 
 
 from nltk.corpus import stopwords
