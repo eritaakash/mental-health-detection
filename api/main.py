@@ -36,3 +36,7 @@ def return_predictions(data: dict):
 # end.
 # run the API using the command: uvicorn main:app --reload
 # The API will be hosted on http://localhost:8000
+
+# production command: uvicorn main:app --host
+
+# uvicorn command not found? Install it using pip install uvicorn
