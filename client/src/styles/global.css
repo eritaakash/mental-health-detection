@@ -91,12 +91,24 @@ textarea {
 section span {
     position: absolute;
     left: -0.8rem;
-    top: -2.5rem;
+    top: -3rem;
 
     padding: 0.5rem 1rem;
     background: #5a189a;
 
     border-radius: 0.5rem;
+    color: var(--fg-prim);
+
+    font-size: 0.8rem;
+
+    width: fit-content;
+    height: 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
 }
 
 textarea::placeholder {
@@ -118,6 +130,31 @@ button {
     width: 10rem;
 
     cursor: pointer;
+    outline: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+section span svg, button svg {
+    fill: var(--fg-prim);
+    height: 1.25rem;
+    width: 1.25rem;
+
+    animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 button:hover {
