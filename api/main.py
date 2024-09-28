@@ -1,7 +1,7 @@
 import joblib as pickle
 import os
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from helpers.predict import predict
 
 import uvicorn 
@@ -40,7 +40,8 @@ def return_predictions(data: dict):
 
 
 @app.get('/')
-def health_check():
+def health_check(response: Response):
+    response.status_code = 200
     return 'API is up and running!'
 
 
