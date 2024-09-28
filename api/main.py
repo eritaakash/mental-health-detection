@@ -27,3 +27,19 @@ def return_predictions(data: dict):
         predictions.append(prediction)
 
     return { 'data': data, 'predictions': predictions }
+
+
+@app.get('/')
+def health_check():
+    return 'API is up and running!'
+
+
+
+# uvicorn main:app 
+# -> No open ports detected on 0.0.0.0, continuing to scan...
+
+# define a port to run the app
+# uvicorn main:app --port 8000
+
+# define a host and port to run the app
+# uvicorn main:app --host
