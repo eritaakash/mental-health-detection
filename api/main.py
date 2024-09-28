@@ -5,6 +5,7 @@ from fastapi import FastAPI, Response
 from helpers.predict import predict
 
 import uvicorn 
+from fastapi.middleware.cors import CORSMiddleware
 
 model = None
 tlidf = None
@@ -20,11 +21,12 @@ with open('./model/mental_health_tfidf.pkl', 'rb') as f:
 app = FastAPI()
 
 # add cors 
-@app.middleware("http")
-async def add_cors_header(request, call_next):
-    response = await call_next(request)
-    response.headers['Access-Control-Allow-Origin'] = '*'
-    return response
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Only allow this domain
+    allow_methods=["GET", "POST"],  # Allow only GET and POST methods
+    allow_headers=["*"],  # Allow all headers
+)
 
 @app.post('/predict')
 def return_predictions(data: dict):
