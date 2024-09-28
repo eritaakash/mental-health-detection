@@ -27,16 +27,3 @@ def return_predictions(data: dict):
         predictions.append(prediction)
 
     return { 'data': data, 'predictions': predictions }
-
-# expected json body:
-# {
-#     "data": ["I am feeling very sad", "I am feeling very happy"]
-# }
-
-# end.
-# run the API using the command: uvicorn main:app --reload
-# The API will be hosted on http://localhost:8000
-
-# production command: uvicorn main:app --host
-
-# uvicorn command not found? Install it using pip install uvicorn
