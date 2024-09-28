@@ -1,7 +1,10 @@
 import joblib as pickle
+import os
 
 from fastapi import FastAPI
 from helpers.predict import predict
+
+import uvicorn 
 
 model = None
 tlidf = None
@@ -34,12 +37,6 @@ def health_check():
     return 'API is up and running!'
 
 
-
-# uvicorn main:app 
-# -> No open ports detected on 0.0.0.0, continuing to scan...
-
-# define a port to run the app
-# uvicorn main:app --port 8000
-
-# define a host and port to run the app
-# uvicorn main:app --host
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
